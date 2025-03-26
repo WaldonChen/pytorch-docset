@@ -16,14 +16,6 @@ jobs:
           repository: pytorch/pytorch
           ref: v${{ env.PYTORCH_VERSION }}
           path: pytorch
-      - name: Apply patches to pytorch repository
-        working-directory: pytorch
-        run: |
-          git config user.name 'GitHub Actions'
-          git config user.email '<>'
-          for i in $(ls ../patches/*.patch); do
-            git am "$i"
-          done
       - name: Configure Python dependencies
         run: |
           mv pytorch/docs/requirements.txt .
