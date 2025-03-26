@@ -17,17 +17,6 @@ jobs:
           repository: pytorch/pytorch
           ref: v${{ env.PYTORCH_VERSION }}
           path: pytorch
-      - name: Configure Python dependencies
-        # Remove the editable install -e flag from the requirements.txt file:
-        # uv doesn't support it and it is not needed anyway.
-        run: |
-          sed 's/^-e //' pytorch/.ci/docker/requirements-docs.txt > requirements.txt
-          >> requirements.txt cat << EOF
-          torch==${{ env.PYTORCH_VERSION }}
-          doc2dash==3.1.0
-          standard-imghdr==3.13.0
-          EOF
-          cat requirements.txt
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
