@@ -47,7 +47,7 @@ jobs:
       - name: Install KaTeX
         run: npm install --global katex
       - name: Install ImageMagick
-        run: apt-get update && apt-get -y install imagemagick
+        run: sudo apt-get update && sudo apt-get -y install imagemagick
       - name: Compile docset
         env:
           SPHINXOPTS: "-j auto -WT"
