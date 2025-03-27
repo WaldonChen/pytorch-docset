@@ -1,6 +1,6 @@
 # PyTorch docset
 
-Docset version of the [PyTorch 2.4.1 documentation](https://pytorch.org/docs/2.4/).
+Docset version of the [PyTorch 2.6.0 documentation](https://pytorch.org/docs/2.6/).
 
 I couldn't find an up-to-date docset version of the docs, so I decided to build
 them on GitHub myself. This version also fixes an issue where some of the
