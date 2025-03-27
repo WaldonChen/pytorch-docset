@@ -21,7 +21,8 @@ jobs:
         # Remove the editable install -e flag from the requirements.txt file:
         # uv doesn't support it and it is not needed anyway.
         run: |
-          sed 's/^-e //' pytorch/docs/requirements.txt > requirements.txt
+          cp pytorch/.ci/docker/requirements-ci.txt requirements.txt
+          sed 's/^-e //' pytorch/.ci/docker/requirements-docs.txt >> requirements.txt
           >> requirements.txt cat << EOF
           torch==${{ env.PYTORCH_VERSION }}
           doc2dash==3.1.0
